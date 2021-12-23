@@ -10,7 +10,7 @@ properties:
     description: The ID of the user that initiated the creation of the Transaction.
     type: integer
   accountID:
-    $ref: ../../../accounts/types/AccountID.yaml
+    $ref: ../../../accounts/types/AccountId.yaml
   batchID:
     description: The ID of the "batch" that the Transaction belongs to. Transactions in the same batch are applied to the Account simultaneously.
     type: integer

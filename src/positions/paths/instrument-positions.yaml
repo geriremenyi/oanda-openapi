@@ -5,7 +5,7 @@ get:
   tags:
     - Position
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
     - $ref: ../../shared/parameters/InstrumentName.yaml
   responses:
     200:

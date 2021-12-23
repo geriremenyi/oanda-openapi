@@ -5,7 +5,7 @@ get:
   tags:
     - Transaction
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
     - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
     - name: from
       description: The starting time (inclusive) of the time range for the Transactions being queried.

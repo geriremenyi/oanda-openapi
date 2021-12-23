@@ -5,7 +5,7 @@ patch:
   tags:
     - Account
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
     - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
   requestBody:
     description: Representation of the Account configuration to set

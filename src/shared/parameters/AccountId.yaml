@@ -1,6 +1,6 @@
-name: accountID
+name: accountId
 description: Account identifier
 in: path
 required: true
 schema: 
-  $ref: ../../accounts/types/AccountID.yaml
+  $ref: ../../accounts/types/AccountId.yaml

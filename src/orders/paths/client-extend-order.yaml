@@ -5,7 +5,7 @@ put:
   tags:
     - Order
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
     - $ref: ../../shared/parameters/OrderSpecifier.yaml
     - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
   requestBody:

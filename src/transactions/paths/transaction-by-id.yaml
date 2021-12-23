@@ -5,8 +5,8 @@ get:
   tags:
     - Transaction
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
-    - $ref: ../../shared/parameters/TransactionID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
+    - $ref: ../../shared/parameters/TransactionId.yaml
     - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
   responses:
     200:

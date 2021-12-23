@@ -4,7 +4,7 @@ allOf:
   - type: object
     properties:
       id:
-        $ref: ./AccountID.yaml
+        $ref: ./AccountId.yaml
       alias:
         description: Client-assigned alias for the Account. Only provided if the Account has an alias set
         type: string

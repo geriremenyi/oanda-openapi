@@ -5,7 +5,7 @@ get:
   tags:
     - Account
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
     - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
     - name: sinceTransactionID
       description: ID of the Transaction to get Account changes since.

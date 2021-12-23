@@ -5,7 +5,7 @@ get:
   tags:
     - Pricing
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
     - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
     - name: instruments
       description: List of Instruments to get pricing for.

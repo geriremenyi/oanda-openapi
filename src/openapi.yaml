@@ -24,15 +24,15 @@ security:
 paths:
   /accounts:
     $ref: ./accounts/paths/accounts.yaml
-  /accounts/{accountID}:
+  /accounts/{accountId}:
     $ref: ./accounts/paths/account-by-id.yaml
-  /accounts/{accountID}/summary:
+  /accounts/{accountId}/summary:
     $ref: ./accounts/paths/account-summary.yaml
-  /accounts/{accountID}/instruments:
+  /accounts/{accountId}/instruments:
     $ref: ./accounts/paths/account-instruments.yaml
-  /accounts/{accountID}/configuration:
+  /accounts/{accountId}/configuration:
     $ref: ./accounts/paths/account-configuration.yaml
-  /accounts/{accountID}/changes:
+  /accounts/{accountId}/changes:
     $ref: ./accounts/paths/account-changes.yaml
   /instruments/{instrument}/candles:
     $ref: ./instruments/paths/candles.yaml
@@ -40,45 +40,45 @@ paths:
     $ref: ./instruments/paths/order-book.yaml
   /instruments/{instrument}/positionBook:
     $ref: ./instruments/paths/position-book.yaml
-  /accounts/{accountID}/orders:
+  /accounts/{accountId}/orders:
     $ref: ./orders/paths/orders.yaml
-  /accounts/{accountID}/pendingOrders:
+  /accounts/{accountId}/pendingOrders:
     $ref: ./orders/paths/pending-orders.yaml
-  /accounts/{accountID}/orders/{orderSpecifier}:
+  /accounts/{accountId}/orders/{orderSpecifier}:
     $ref: ./orders/paths/order-by-id.yaml
-  /accounts/{accountID}/orders/{orderSpecifier}/cancel:
+  /accounts/{accountId}/orders/{orderSpecifier}/cancel:
     $ref: ./orders/paths/cancel-order.yaml
-  /accounts/{accountID}/orders/{orderSpecifier}/clientExtensions:
+  /accounts/{accountId}/orders/{orderSpecifier}/clientExtensions:
     $ref: ./orders/paths/client-extend-order.yaml
-  /accounts/{accountID}/trades:
+  /accounts/{accountId}/trades:
     $ref: ./trades/paths/trades.yaml
-  /accounts/{accountID}/openTrades:
+  /accounts/{accountId}/openTrades:
     $ref: ./trades/paths/open-trades.yaml
-  /accounts/{accountID}/trades/{tradeSpecifier}:
+  /accounts/{accountId}/trades/{tradeSpecifier}:
     $ref: ./trades/paths/trade-by-id.yaml
-  /accounts/{accountID}/trades/{tradeSpecifier}/close:
+  /accounts/{accountId}/trades/{tradeSpecifier}/close:
     $ref: ./trades/paths/close-trade.yaml
-  /accounts/{accountID}/trades/{tradeSpecifier}/clientExtensions:
+  /accounts/{accountId}/trades/{tradeSpecifier}/clientExtensions:
     $ref: ./trades/paths/client-extend-trade.yaml
-  /accounts/{accountID}/trades/{tradeSpecifier}/orders:
+  /accounts/{accountId}/trades/{tradeSpecifier}/orders:
     $ref: ./trades/paths/trade-orders.yaml
-  /accounts/{accountID}/positions:
+  /accounts/{accountId}/positions:
     $ref: ./positions/paths/positions.yaml
-  /accounts/{accountID}/openPositions:
+  /accounts/{accountId}/openPositions:
     $ref: ./positions/paths/open-positions.yaml
-  /accounts/{accountID}/positions/{instrument}:
+  /accounts/{accountId}/positions/{instrument}:
     $ref: ./positions/paths/instrument-positions.yaml
-  /accounts/{accountID}/positions/{instrument}/close:
+  /accounts/{accountId}/positions/{instrument}/close:
     $ref: ./positions/paths/close-position.yaml
-  /accounts/{accountID}/transactions:
+  /accounts/{accountId}/transactions:
     $ref: ./transactions/paths/transactions.yaml
-  /accounts/{accountID}/transactions/{transactionID}:
+  /accounts/{accountId}/transactions/{transactionId}:
     $ref: ./transactions/paths/transaction-by-id.yaml
-  /accounts/{accountID}/transactions/idrange:
+  /accounts/{accountId}/transactions/idrange:
     $ref: ./transactions/paths/transactions-idrange.yaml
-  /accounts/{accountID}/transactions/sinceid:
+  /accounts/{accountId}/transactions/sinceid:
     $ref: ./transactions/paths/transactions-sinceid.yaml
-  /accounts/{accountID}/pricing:
+  /accounts/{accountId}/pricing:
     $ref: ./pricing/paths/pricing.yaml
 components:
   securitySchemes:
@@ -97,8 +97,8 @@ components:
       $ref: ./accounts/types/AccountCurrency.yaml
     AccountGuaranteedStopLossOrderMode:
       $ref: ./accounts/types/AccountGuaranteedStopLossOrderMode.yaml
-    AccountID:
-      $ref: ./accounts/types/AccountID.yaml
+    AccountId:
+      $ref: ./accounts/types/AccountId.yaml
     AccountProperties:
       $ref: ./accounts/types/AccountProperties.yaml
     AccountState:
@@ -401,8 +401,8 @@ components:
       $ref: ./shared/helpers/DateTime.yaml
     DateTimeFormat:
       $ref: ./shared/helpers/DateTimeFormat.yaml
-    IDSpecifier:
-      $ref: ./shared/helpers/IDSpecifier.yaml
+    IdSpecifier:
+      $ref: ./shared/helpers/IdSpecifier.yaml
     NonableUnits:
       $ref: ./shared/helpers/NonableUnits.yaml
     Units:
@@ -427,9 +427,9 @@ components:
   parameters:
     AcceptDatetimeFormat:
       $ref: ./shared/parameters/AcceptDatetimeFormat.yaml
-    AccountID:
-      $ref: ./shared/parameters/AccountID.yaml
-    ClientRequestID:
+    AccountId:
+      $ref: ./shared/parameters/AccountId.yaml
+    ClientRequestId:
       $ref: ./shared/parameters/ClientRequestId.yaml
     InstrumentName:
       $ref: ./shared/parameters/InstrumentName.yaml
@@ -437,8 +437,8 @@ components:
       $ref: ./shared/parameters/OrderSpecifier.yaml
     TradeSpecifier:
       $ref: ./shared/parameters/TradeSpecifier.yaml
-    TransactionID:
-      $ref: ./shared/parameters/TransactionID.yaml
+    TransactionId:
+      $ref: ./shared/parameters/TransactionId.yaml
   headers:
     ContentEncoding:
       $ref: ./shared/headers/ContentEncoding.yaml
@@ -446,5 +446,5 @@ components:
       $ref: ./shared/headers/Link.yaml
     Location:
       $ref: ./shared/headers/Location.yaml
-    RequestID:
+    RequestId:
       $ref: ./shared/headers/RequestId.yaml

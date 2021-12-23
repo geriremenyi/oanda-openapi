@@ -5,7 +5,7 @@ get:
   tags:
     - Transaction
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
     - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
     - name: id
       description: The ID of the last Transacion fetched. This query will return all Transactions newer than the TransactionID.

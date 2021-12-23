@@ -5,7 +5,7 @@ get:
   tags:
     - Position
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
   responses:
     200:
       description: The Account's Positions are provided.

@@ -5,7 +5,7 @@ get:
   tags:
     - Account
   parameters:
-    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AccountId.yaml
     - name: instruments
       description: List of instruments to query specifically.
       in: query
