@@ -1,0 +1,79 @@
+get:
+  summary: Get Order
+  description: Get details for a single Order in an Account
+  operationId: getOrder
+  tags:
+    - Order
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/OrderSpecifier.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+  responses:
+    200:
+      description: The details of the Order requested
+      headers:
+        Link:
+          $ref: ../../shared/headers/Link.yaml
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/OrderResponse.yaml
+    401:
+       $ref: ../../shared/errors/401.yaml
+    404:
+       $ref: ../../shared/errors/404.yaml
+    405:
+       $ref: ../../shared/errors/405.yaml
+put:
+  summary: Replace Order
+  description: Replace an Order in an Account by simultaneously cancelling it and creating a replacement Order
+  tags:
+    - Order
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/OrderSpecifier.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+    - $ref: ../../shared/parameters/ClientRequestId.yaml      
+  requestBody:
+    description:  Specification of the replacing Order. The replacing order must have the same type as the replaced Order.
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../requests/ReplaceOrderRequest.yaml
+  responses:
+    201:
+      description: The Order was successfully cancelled and replaced
+      headers:
+        Location:
+          $ref: ../../shared/headers/Location.yaml
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/ReplaceOrderResponse.yaml
+    400:
+      description: The Order specification was invalid
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/ReplaceOrderBadRequestResponse.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    404:
+      description: The Account or Order specified does not exist.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/ReplaceOrderNotFoundResponse.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml

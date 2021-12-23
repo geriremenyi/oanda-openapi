@@ -1,0 +1,20 @@
+get:
+  summary: List Accounts
+  description: Get a list of all Accounts authorized for the provided token.
+  operationId: getAccounts
+  tags:
+    - Account
+  responses:
+    200:
+      description: The list of authorized Accounts has been provided.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/AccountsResponse.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml

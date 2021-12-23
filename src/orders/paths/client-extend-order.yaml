@@ -1,0 +1,49 @@
+put:
+  summary: Set Order Extensions
+  description: Update the Client Extensions for an Order in an Account. Do notset, modify, or delete clientExtensions if your account is associated with MT4.
+  operationId: setOrderExtensions
+  tags:
+    - Order
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/OrderSpecifier.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+  requestBody:
+    description: Representation of the replacing Order
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../requests/OrderExtensionsRequest.yaml
+  responses:
+    200:
+      description: The Order's Client Extensions were successfully modified
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/OrderExtensionsResponse.yaml
+    400:
+      description: The Order Client Extensions specification was invalid
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/OrderExtensionsBadRequestResponse.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    404:
+      description: The Account or Order specified does not exist.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/OrderExtensionsNotFoundResponse.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml

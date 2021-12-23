@@ -1,0 +1,55 @@
+get:
+  summary: List Transactions
+  description: Get a list of Transactions pages that satisfy a time-based Transaction query.
+  operationId: getTransactions
+  tags:
+    - Transaction
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+    - name: from
+      description: The starting time (inclusive) of the time range for the Transactions being queried.
+      in: query
+      schema:
+        $ref: ../../shared/helpers/DateTime.yaml
+    - name: to
+      description: The ending time (inclusive) of the time range for the Transactions being queried.
+      in: query
+      schema:
+        $ref: ../../shared/helpers/DateTime.yaml
+    - name: pageSize
+      description: The number of Transactions to include in each page of the results.
+      in: query
+      schema:
+        type: integer
+    - name: type
+      description: A filter for restricting the types of Transactions to retreive.
+      in: query
+      schema:
+        type: array
+        items:
+          $ref: ../types/shared/TransactionType.yaml
+      style: form
+      explode: false
+  responses:
+    200:
+      description: The requested time range of Transaction pages are provided.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/TransactionsResponse.yaml
+    400:
+      $ref: ../../shared/errors/400.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    403:
+      $ref: ../../shared/errors/403.yaml
+    404:
+      $ref: ../../shared/errors/404.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml
+    416:
+      $ref: ../../shared/errors/416.yaml

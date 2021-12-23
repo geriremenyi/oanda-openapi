@@ -1,0 +1,49 @@
+patch:
+  summary: Configure Account
+  description: Set the client-configurable portions of an Account.
+  operationId: configureAccount
+  tags:
+    - Account
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+  requestBody:
+    description: Representation of the Account configuration to set
+    content:
+      application/json:
+        schema:
+          $ref: ../requests/AccountConfigurationRequest.yaml
+  responses:
+    200:
+      description: The Account was configured successfully.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/AccountConfigurationResponse.yaml
+    400:
+      description: The configuration specification was invalid.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/AccountConfigurationBadRequestResponse.yaml
+    403:
+      description: The configuration operation was forbidden on the Account.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/AccountConfigurationForbiddenResponse.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    404:
+      $ref: ../../shared/errors/404.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml

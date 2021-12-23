@@ -1,0 +1,56 @@
+get:
+  summary: List Trades
+  description: Get a list of Trades for an Account
+  operationId: getTrades
+  tags:
+    - Trade
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+    - name: ids
+      description: List of Trade IDs to retrieve.
+      in: query
+      schema:
+        type: array
+        items:
+          type: integer
+      style: form
+      explode: false
+    - name: state
+      description: The state to filter the requested Trades by.
+      in: query
+      schema:
+        type: string
+    - name: instrument
+      description: The instrument to filter the requested Trades by.
+      in: query
+      schema:
+        $ref: ../../instruments/types/InstrumentName.yaml
+    - name: count
+      description: The maximum number of Trades to return.
+      in: query
+      schema:
+        type: integer
+    - name: beforeID
+      description: The maximum Trade ID to return. If not provided the most recent Trades in the Account are returned.
+      in: query
+      schema:
+        type: integer
+  responses:
+    200:
+      description: The list of Trades requested
+      headers:
+        Link:
+          $ref: ../../shared/headers/Link.yaml
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/TradesResponse.yaml
+    401:
+       $ref: ../../shared/errors/401.yaml
+    404:
+       $ref: ../../shared/errors/404.yaml
+    405:
+       $ref: ../../shared/errors/405.yaml

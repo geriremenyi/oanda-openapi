@@ -1,0 +1,10 @@
+description: The type of the Order.
+type: string
+enum:
+  - TAKE_PROFIT
+  - STOP_LOSS
+  - TRAILING_STOP_LOSS
+x-enum-varnames:
+  - TAKE_PROFIT
+  - STOP_LOSS
+  - TRAILING_STOP_LOSS

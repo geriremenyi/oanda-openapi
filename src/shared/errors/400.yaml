@@ -1,0 +1,11 @@
+description: Bad Request. The client has provided invalid data to be processed by the server.
+headers:
+  RequestID:
+    $ref: ../headers/RequestId.yaml
+content:
+  application/json:
+    schema:
+      $ref: ./helpers/Error400.yaml
+    example:
+      errorCode: STOP_LOSS_ON_FILL_PRICE_PRECISION_EXCEEDED
+      errorMessage: Invalid value specified for 'precision'.

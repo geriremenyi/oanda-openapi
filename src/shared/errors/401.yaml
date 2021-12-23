@@ -1,0 +1,10 @@
+description: Unauthorized. The endpoint being access required the client to authenticated, however the the authentication token is invalid or has not been provided.
+headers:
+  RequestID:
+    $ref: ../headers/RequestId.yaml
+content:
+  application/json:
+    schema:
+      $ref: ./helpers/Error401.yaml
+    example:
+      errorMessage: he provided request was forbidden.

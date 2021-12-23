@@ -1,0 +1,26 @@
+get:
+  summary: Trade Details
+  description: Get the details of a specific Trade in an Account
+  operationId: getTrade
+  tags:
+    - Trade
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+    - $ref: ../../shared/parameters/TradeSpecifier.yaml
+  responses:
+    200:
+      description: The details for the requested Trade is provided
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/TradeResponse.yaml
+    401:
+       $ref: ../../shared/errors/401.yaml
+    404:
+       $ref: ../../shared/errors/404.yaml
+    405:
+       $ref: ../../shared/errors/405.yaml

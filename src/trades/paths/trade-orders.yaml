@@ -1,0 +1,42 @@
+put:
+  summary: Set Dependent Orders
+  description: Create, replace and cancel a Trade's dependent Orders (Take Profit, Stop Loss and Trailing Stop Loss) through the Trade itself
+  operationId: setTradeOrders
+  tags:
+    - Trade
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+    - $ref: ../../shared/parameters/TradeSpecifier.yaml
+  requestBody:
+    description: Details of how to modify the Trade's dependent Orders.
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../requests/DependentTradeOrdersRequest.yaml
+  responses:
+    200:
+      description: The Trade's dependent Orders have been modified as requested.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/DependentTradeOrdersResponse.yaml
+    400:
+      description: The Trade's dependent Orders cannot be modified as requested.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/DependentTradeOrdersBadRequestResponse.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    404:
+      $ref: ../../shared/errors/404.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml

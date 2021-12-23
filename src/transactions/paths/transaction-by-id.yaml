@@ -1,0 +1,26 @@
+get:
+  summary: Transaction Details
+  description: Get the details of a single Account Transaction.
+  operationId: getTransaction
+  tags:
+    - Transaction
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/TransactionID.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+  responses:
+    200:
+      description: The details of the requested Transaction are provided.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/TransactionResponse.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    404:
+      $ref: ../../shared/errors/404.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml

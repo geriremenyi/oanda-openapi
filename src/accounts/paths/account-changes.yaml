@@ -1,0 +1,32 @@
+get:
+  summary: Poll Account Updates
+  description: Endpoint used to poll an Account for its current state and changes since a specified TransactionID.
+  operationId: getAccountChanges
+  tags:
+    - Account
+  parameters:
+    - $ref: ../../shared/parameters/AccountID.yaml
+    - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
+    - name: sinceTransactionID
+      description: ID of the Transaction to get Account changes since.
+      in: query
+      schema:
+        type: integer
+  responses:
+    200:
+      description: The Account state and changes are provided.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/AccountChangesResponse.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    404:
+      $ref: ../../shared/errors/404.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml
+    416:
+      $ref: ../../shared/errors/416.yaml

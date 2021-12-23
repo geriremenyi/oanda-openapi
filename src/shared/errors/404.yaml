@@ -1,0 +1,11 @@
+description: Not Found. The client has attempted to access an entity that does not exist.
+headers:
+  RequestID:
+    $ref: ../headers/RequestId.yaml
+content:
+  application/json:
+    schema:
+      $ref: ./helpers/Error404.yaml
+    example:
+      errorCode: NO_SUCH_TRADE
+      errorMessage: The trade ID specified does not exist.

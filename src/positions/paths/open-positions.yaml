@@ -1,0 +1,24 @@
+get:
+  summary: Open Positions
+  description: List all open Positions for an Account. An open Position is a Position in an Account that currently has a Trade opened for it.
+  operationId: getOpenPositions
+  tags:
+    - Position
+  parameters: 
+    - $ref: ../../shared/parameters/AccountID.yaml
+  responses:
+    200:
+      description: The Account's open Positions are provided.
+      headers:
+        RequestID:
+          $ref: ../../shared/headers/RequestId.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../responses/OpenPositionsResponse.yaml
+    401:
+      $ref: ../../shared/errors/401.yaml
+    404:
+      $ref: ../../shared/errors/404.yaml
+    405:
+      $ref: ../../shared/errors/405.yaml

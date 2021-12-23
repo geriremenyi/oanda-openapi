@@ -1,0 +1,10 @@
+description: The reason that the Stop Loss Order was initiated
+type: string
+enum:
+  - CLIENT_ORDER
+  - REPLACEMENT
+  - ON_FILL
+x-enum-varnames:
+  - CLIENT_ORDER
+  - REPLACEMENT
+  - ON_FILL
