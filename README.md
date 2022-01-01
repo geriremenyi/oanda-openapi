@@ -12,7 +12,7 @@ The specification is published using SwaggerUI hosted on this repo's github page
 
 ### Prerequisites
 
-- [Node](https://nodejs.org/en/) for dev environment,
+- [Node](https://nodejs.org/en/) for dev environment.
 - [Yarn](https://classic.yarnpkg.com/en/docs/install) for package dependencies.
 - (optional) [Visual Studio Code](https://code.visualstudio.com/) for IDE.
 
@@ -26,6 +26,10 @@ git clone https://github.com/geriremenyi/oanda-v20-openapi.git
 or
 ```console
 git clone git@github.com:geriremenyi/oanda-v20-openapi.git
+```
+or
+```console
+gh repo clone geriremenyi/oanda-v20-openapi
 ```
 
 2. Navigate to the root of the cloned project and install all dependencies
