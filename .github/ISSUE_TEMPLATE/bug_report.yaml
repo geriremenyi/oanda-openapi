@@ -1,7 +1,7 @@
 name: Bug Report
 description: File a bug report
 title: ":red_circle: "
-labels: ["bug", "triage"]
+labels: ["bug"]
 assignees:
   - geriremenyi
 body:

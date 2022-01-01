@@ -6,9 +6,3 @@ Briefly describe the technical requirements of the feature implementetion in cas
 
 **Solution description**
 Describe the code changes in details for the reviewers. Explain the technical solution you have provided and how it implements/fixes the issue.
-
-**Tests**
-- [ ] Unit tests
-- [ ] Integration tests
-- [ ] System tests
-- [ ] Manual tests
