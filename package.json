@@ -7,17 +7,17 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "validate:original": "swagger-cli validate src/openapi.yaml",
-    "validate:bundled": "swagger-cli validate out/definition/openapi.yaml",
+    "swagger-ui": "opener http://localhost:8080 && http-server --cors",
     "bundle": "swagger-cli bundle src/openapi.yaml -o out/definition/openapi.yaml -t yaml",
-    "generate:csharp-netcore": "openapi-generator-cli generate -i out/definition/openapi.yaml -g csharp-netcore -o out/code/csharp-netcore -c config/csharp-netcore.json",
-    "swagger-ui": "http-server --cors",
-    "test": "start http://localhost:8080"
+    "validate:original": "swagger-cli validate src/openapi.yaml",
+    "validate:bundled": "yarn bundle && swagger-cli validate out/definition/openapi.yaml",
+    "generate:csharp-netcore": "yarn validate:bundled && openapi-generator-cli generate -i out/definition/openapi.yaml -g csharp-netcore -o out/code/csharp-netcore -c config/csharp-netcore.json"
   },
   "devDependencies": {
+    "opener": "^1.5.2",
+    "http-server": "^14.0.0",
     "@apidevtools/swagger-cli": "^4.0.4",
-    "@openapitools/openapi-generator-cli": "^2.4.21",
-    "http-server": "^14.0.0"
+    "@openapitools/openapi-generator-cli": "^2.4.21"
   },
   "srcHash": "6c787d2a6ad6f92f6978bc2b6d0bfce0"
 }
