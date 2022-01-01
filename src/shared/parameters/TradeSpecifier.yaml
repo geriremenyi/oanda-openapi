@@ -3,4 +3,4 @@ description: Specifier for the Trade
 in: path
 required: true
 schema:
-  $ref: ../helpers/IDSpecifier.yaml
+  $ref: ../helpers/IdSpecifier.yaml

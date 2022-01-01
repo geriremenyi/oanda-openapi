@@ -2,7 +2,7 @@ description: The dynamic state of an Order. This is only relevant to TrailingSto
 type: object
 properties:
   id:
-    description: The Order's ID.
+    description: The Order's Id.
     type: integer
   trailingStopValue:
     description: The Order's calculated trailing stop value.

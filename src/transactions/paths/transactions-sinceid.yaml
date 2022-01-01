@@ -1,6 +1,6 @@
 get:
   summary: Transactions Since ID
-  description: Get a range of Transactions for an Account starting at (but not including) a provided Transaction ID.
+  description: Get a range of Transactions for an Account starting at (but not including) a provided Transaction Id.
   operationId: getTransactionsSince
   tags:
     - Transaction
@@ -8,7 +8,7 @@ get:
     - $ref: ../../shared/parameters/AccountId.yaml
     - $ref: ../../shared/parameters/AcceptDatetimeFormat.yaml
     - name: id
-      description: The ID of the last Transacion fetched. This query will return all Transactions newer than the TransactionID.
+      description: The ID of the last Transacion fetched. This query will return all Transactions newer than the TransactionId.
       in: query
       schema:
         type: integer

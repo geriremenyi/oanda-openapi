@@ -4,7 +4,7 @@ properties:
   id:
     $ref: ./AccountId.yaml
   mt4AccountID:
-    description: The Account's associated MT4 Account ID. This field will not be present if the Account is not an MT4 account.
+    description: The Account's associated MT4 Account Id. This field will not be present if the Account is not an MT4 account.
     type: integer
   tags:
     description: The Account's tags

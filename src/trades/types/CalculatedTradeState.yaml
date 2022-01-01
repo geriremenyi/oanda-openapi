@@ -2,7 +2,7 @@ description: The dynamic (calculated) state of an open Trade
 type: object
 properties:
   id:
-    description: The Trade's ID.
+    description: The Trade's Id.
     type: integer
   unrealizedPL:
     description: The Trade's unrealized profit/loss.
