@@ -21,11 +21,11 @@ body:
   - type: textarea
     id: extra-context
     attributes:
-    label: Anything else?
-    description: |
-      Links? References? Anything that will give us more context about the feature you are requesting!
+      label: Anything else?
+      description: |
+        Links? References? Anything that will give us more context about the feature you are requesting!
 
-      Tip: You can attach images or files by clicking this area to highlight it and then dragging files in.
+        Tip: You can attach images or files by clicking this area to highlight it and then dragging files in.
   - type: input
     id: contact
     attributes:

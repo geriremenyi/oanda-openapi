@@ -58,7 +58,7 @@ yarn validate:bundled
 ### Generate code
 
 To generate C# (.NET core) client run the following command:
-```shell
+```console
 yarn generate:csharp-netcore
 ```
 
