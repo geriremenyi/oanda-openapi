@@ -1,0 +1,59 @@
+name: Generate code !!TEST!!
+on:
+  pull_request
+jobs:
+  generate_dotnet_core:
+    name: Generate .NET core client
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v2
+
+      - name: Setup node 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Generate .NET core client
+        run: yarn generate:csharp-netcore
+
+      - name: Upload generated .NET client
+        uses: actions/upload-artifact@v2
+        with:
+          name: dotnet-core-client
+          path: out/code/csharp-netcore
+
+  push_dotnet_core:
+    name: Push .NET core client
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout oanda-dotnet-client repo
+        uses: actions/checkout@v2
+        with:
+          repository: geriremenyi/oanda-dotnet-client
+          ref: master
+          path: remote
+
+      - name: Download generated .NET core client
+        uses: actions/download-artifact@v2
+        with:
+          name: dotnet-core-client
+          path: local
+
+      - name: Remove old files from remote
+        run: |
+          rm -f remote/oanda-dotnet-client/*.sln
+          rm -f remote/oanda-dotnet-client/.gitignore
+          rm -rf remote/oanda-dotnet-client/src 
+          rm -rf client-remote/oanda-dotnet-client/docs
+
+      - name: Add local files to remote
+        run: |
+          cp local/*.sln remote
+          cp local/.gitignore remote/.gitignore
+          cp -r local/src remote/src
+          cp -r local/docs remote/docs
