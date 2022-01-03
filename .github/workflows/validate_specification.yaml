@@ -18,11 +18,8 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
-      - name: Validate specification
+      - name: Validate decomposed specification
         run: yarn validate:original
-
-      - name: Bundle specification
-        run: yarn bundle
 
       - name: Validate bundled specification
         run: yarn validate:bundled

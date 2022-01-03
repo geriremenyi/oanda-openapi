@@ -2,8 +2,8 @@ name: Generate code !!TEST!!
 on:
   pull_request
 jobs:
-  generate_dotnet_core:
-    name: Generate .NET core client
+  generate_dotnet:
+    name: Generate .NET client
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo content
@@ -18,18 +18,19 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
-      - name: Generate .NET core client
+      - name: Generate .NET client
         run: yarn generate:csharp-netcore
 
       - name: Upload generated .NET client
         uses: actions/upload-artifact@v2
         with:
-          name: dotnet-core-client
+          name: oanda-dotnet-client
           path: out/code/csharp-netcore
 
-  push_dotnet_core:
-    name: Push .NET core client
+  push_dotnet:
+    name: Push .NET client
     runs-on: ubuntu-latest
+    needs: generate_dotnet
     steps:
       - name: Checkout oanda-dotnet-client repo
         uses: actions/checkout@v2
@@ -38,10 +39,10 @@ jobs:
           ref: master
           path: remote
 
-      - name: Download generated .NET core client
+      - name: Download generated .NET client
         uses: actions/download-artifact@v2
         with:
-          name: dotnet-core-client
+          name: oanda-dotnet-client
           path: local
 
       - name: Remove old files from remote
