@@ -1,6 +1,0 @@
-name: instrument
-description: Instrument name
-in: path
-required: true
-schema:
-  $ref: ../../instruments/types/InstrumentName.yaml

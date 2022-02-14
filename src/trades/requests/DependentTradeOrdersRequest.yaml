@@ -1,8 +1,0 @@
-type: object
-properties:
-  takeProfit:
-    $ref: ../../orders/types/TakeProfitDetails.yaml
-  stopLoss:
-    $ref: ../../orders/types/StopLossDetails.yaml
-  trailingStopLoss:
-    $ref: ../../orders/types/TrailingStopLossDetails.yaml
