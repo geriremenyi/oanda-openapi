@@ -1,4 +1,0 @@
-type: object
-properties:
-  clientExtensions:
-    $ref: ../../shared/helpers/ClientExtensions.yaml

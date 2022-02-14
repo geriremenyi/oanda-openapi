@@ -1,6 +1,0 @@
-allOf:
-  - type: object
-    properties:
-      orderClientExtensionsModifyTransaction:
-        $ref: ../../transactions/types/order/client-extensions/OrderClientExtensionsModifyTransaction.yaml
-  - $ref: ../../transactions/types/shared/RelatedTransactions.yaml

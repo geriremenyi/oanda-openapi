@@ -1,4 +1,0 @@
-type: object
-properties:
-  positionBook:
-    $ref: ../../positions/types/PositionBook.yaml

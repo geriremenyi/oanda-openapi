@@ -6,7 +6,7 @@ This repository contains a more organized version of the [generated OANDA v20 RE
 
 The specification is published using SwaggerUI hosted on this repo's github page:
 
-[https://geriremenyi.github.io/oanda-v20-openapi](https://geriremenyi.github.io/oanda-v20-openapi)
+[https://geriremenyi.github.io/oanda-openapi](https://geriremenyi.github.io/oanda-openapi)
 
 ## Getting started
 
@@ -21,11 +21,11 @@ The specification is published using SwaggerUI hosted on this repo's github page
 1. Clone this repo
 
 ```console
-git clone https://github.com/geriremenyi/oanda-v20-openapi.git
+git clone https://github.com/geriremenyi/oanda-openapi.git
 ```
 or
 ```console
-git clone git@github.com:geriremenyi/oanda-v20-openapi.git
+git clone git@github.com:geriremenyi/oanda-openapi.git
 ```
 
 2. Navigate to the root of the cloned project and install all dependencies

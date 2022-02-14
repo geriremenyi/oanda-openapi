@@ -1,4 +1,0 @@
-description: Client error 400, bad request.
-type: object
-allOf:
-  - $ref: ./Error4xx.yaml
